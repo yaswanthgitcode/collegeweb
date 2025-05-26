@@ -57,31 +57,17 @@
             </div>
 
             <!-- Contact Form -->
-            <div class="col-md-7">
-                <h4>Send Us a Message</h4>
-                <form id="contactForm">
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Full Name</label>
-                        <input type="text" class="form-control" id="name" required />
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email Address</label>
-                        <input type="email" class="form-control" id="email" required />
-                    </div>
-                    <div class="mb-3">
-                        <label for="subject" class="form-label">Subject</label>
-                        <input type="text" class="form-control" id="subject" />
-                    </div>
-                    <div class="mb-3">
-                        <label for="message" class="form-label">Your Message</label>
-                        <textarea class="form-control" id="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
-                <div id="formAlert" class="alert alert-success mt-3 d-none" role="alert">
-                    ✅ Message sent successfully!
-                </div>
+            <form name="contact" method="POST" data-netlify="true" id="contactForm">
+                <label>Name: <input type="text" name="name" required></label><br>
+                <label>Email: <input type="email" name="email" required></label><br>
+                <label>Message:<br><textarea name="message" required></textarea></label><br>
+                <button type="submit">Send</button>
+            </form>
+
+            <div id="formAlert" class="alert alert-success mt-3 d-none" role="alert">
+                ✅ Message sent successfully!
             </div>
+        </div>
         </div>
     </main>
 
