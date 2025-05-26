@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Us - GIET Polytechnic College</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="shortcut icon" href="gieticon.png" type="image/x-icon">
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container d-flex align-items-center">
+            <img src="gieticon.png" alt="GIET Logo" width="40" height="40" class="me-2" />
+            <a class="navbar-brand mb-0 h1" href="index.html">GIET Polytechnic College</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main -->
+    <main class="container py-5" class="fade-in">
+        <h1 class="text-center mb-4">Contact Us</h1>
+
+        <div class="row g-5">
+            <!-- Contact Info -->
+            <div class="col-md-5">
+                <h4>College Information</h4>
+                <p><strong>GIET Polytechnic College</strong></p>
+                <p>GIET Campus, Rajahmundry,<br>Andhra Pradesh, India</p>
+                <p><strong>Phone:</strong> +91-12345-67890</p>
+                <p><strong>Email:</strong> info@gietpolytechnic.ac.in</p>
+
+                <div class="mt-4">
+                    <h5>Find Us on Google Maps</h5>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.9816794180194!2d81.8055392!3d17.0043432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a37a3780e7408ef%3A0xc6bdc3c4e512dcdf!2sGIET%20College%2C%20Rajahmundry!5e0!3m2!1sen!2sin!4v1716567547654"
+                        width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="col-md-7">
+                <h4>Send Us a Message</h4>
+                <form id="contactForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="name" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" class="form-control" id="subject" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Your Message</label>
+                        <textarea class="form-control" id="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+                <div id="formAlert" class="alert alert-success mt-3 d-none" role="alert">
+                    ✅ Message sent successfully!
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2025 GIET Polytechnic College | Developed by 💙 Andhra Developers Team .</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            document.getElementById('formAlert').classList.remove('d-none');
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>

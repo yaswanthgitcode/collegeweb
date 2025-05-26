@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Courses - GIET Polytechnic College</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .course-section img {
+            max-width: 300px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+    </style>
+
+    <link rel="shortcut icon" href="gieticon.png" type="image/x-icon">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <img src="gieticon.png" alt="GIET Logo" width="40" height="40"
+                style="border-radius: 50%; margin-right: 2px;">
+            <a class="navbar-brand" href="index.html">GIET Polytechnic College</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5" class="fade-in">
+        <h1 class="mb-5 text-center">Diploma Programs at GIET Polytechnic College</h1>
+
+        <section id="mechanical" class="course-section mb-5">
+            <h2>Mechanical Engineering</h2>
+            <img src="data:image/jpeg;base64,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"
+                alt="Mechanical Engineering" />
+            <p>The Mechanical Engineering diploma program prepares students to design, develop, and maintain mechanical
+                systems. The curriculum covers thermodynamics, materials science, manufacturing, and CAD/CAM.</p>
+        </section>
+
+        <section id="civil" class="course-section mb-5">
+            <h2>Civil Engineering</h2>
+            <img src="civil.jpeg" alt="Civil Engineering" />
+            <p>This program focuses on construction, infrastructure design, and project management. Students learn
+                structural engineering, surveying, and environmental engineering techniques.</p>
+        </section>
+
+        <section id="eee" class="course-section mb-5">
+            <h2>Electrical & Electronics Engineering</h2>
+            <img src="eee.jpeg" alt="Electrical & Electronics" />
+            <p>The Electrical & Electronics diploma covers power systems, circuits, control systems, and
+                instrumentation, preparing students for careers in energy and electronics sectors.</p>
+        </section>
+
+        <section id="ece" class="course-section mb-5">
+            <h2>Electronics & Communication Engineering</h2>
+            <img src="ece.jpeg" alt="Electronics & Communication" />
+            <p>This course emphasizes communication systems, microprocessors, signal processing, and embedded systems
+                with hands-on training.</p>
+        </section>
+
+        <section id="cme" class="course-section mb-5">
+            <h2>Computer Engineering (CME)</h2>
+            <img src="cme.jpeg" alt="Computer Engineering" />
+            <p>The Computer Engineering diploma includes programming, data structures, networking, databases, and
+                software engineering fundamentals to prepare students for IT industries.</p>
+        </section>
+
+        <section id="ai_mi" class="course-section mb-5">
+            <h2>Artificial Intelligence & Machine Intelligence (AI & MI)</h2>
+            <img src="ai.jpeg" alt="AI & MI" />
+            <p>This emerging program introduces students to AI concepts, machine learning algorithms, robotics, and data
+                analytics to meet the growing demand in AI fields.</p>
+        </section>
+
+        <section id="cnn" class="course-section mb-5">
+            <h2>Computer Network & Networking (CNN)</h2>
+            <img src="cnn.jpeg" alt="Computer Network & Networking" />
+            <p>Students learn about network architecture, protocols, security, and administration to become network
+                professionals in the telecom and IT sectors.</p>
+        </section>
+
+        <section id="mining" class="course-section mb-5">
+            <h2>Mining Engineering</h2>
+            <img src="min.jpeg" alt="Mining Engineering" />
+            <p>This program covers mining techniques, mineral processing, safety, and environmental aspects, preparing
+                students for careers in mining industries.</p>
+        </section>
+
+        <section id="automobile" class="course-section mb-5">
+            <h2>Automobile Engineering</h2>
+            <img src="ato.jpeg" alt="Automobile Engineering" />
+            <p>The Automobile Engineering diploma focuses on vehicle design, manufacturing, diagnostics, and
+                maintenance, equipping students for the automotive industry.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p class="mb-0">&copy; 2025 GIET Polytechnic College | Developed by 💙 Andhra Developers Team . All rights reserved.</p>
+        <p class="mb-0">NH-5, Chaitanya Knowledge City, Velugubanda Village, East Godavari, Andhra Pradesh</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

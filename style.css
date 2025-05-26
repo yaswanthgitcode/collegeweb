@@ -1,0 +1,303 @@
+/* ===== Reset and base styles ===== */
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #FFF8E1; /* Soft cream background */
+  color: #333333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background-color: #2E7D32 !important; /* Dark Green */
+}
+
+.navbar-brand, .nav-link {
+  color: #FFF !important;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #81C784 !important; /* Lighter Green */
+}
+
+/* Navbar logo image */
+.navbar img {
+  border-radius: 50%;
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+  background-color: #2E7D32;
+  border-color: #2E7D32;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #81C784;
+  border-color: #81C784;
+  color: #fff;
+  text-decoration: none;
+  transform: scale(1.05);
+}
+
+/* ===== Headings ===== */
+h1, h2, h3, h4, h5 {
+  color: #2E7D32;
+  margin-bottom: 1rem;
+}
+
+/* ===== Links ===== */
+a {
+  color: #2E7D32;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #81C784;
+  text-decoration: underline;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #2E7D32;
+  color: #FFF;
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ===== Container ===== */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ===== Forms ===== */
+form .form-control {
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  transition: border-color 0.3s ease;
+}
+
+form .form-control:focus {
+  border-color: #2E7D32;
+  outline: none;
+  box-shadow: 0 0 5px #81C784;
+}
+
+form label {
+  font-weight: 600;
+  color: #2E7D32;
+}
+
+/* Success alert for contact form */
+.alert-success {
+  background-color: #C8E6C9;
+  color: #2E7D32;
+  border: 1px solid #2E7D32;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+/* ===== Sections and cards ===== */
+.section, .card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+/* ===== Responsive tweaks ===== */
+@media (max-width: 768px) {
+  .navbar-collapse {
+    background-color: #2E7D32;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+}
+
+/* ===== Animations ===== */
+main {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+/* ===== Contact & Events Page Styling ===== */
+
+/* Fade-in animation for main content */
+main {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Headings */
+h1, h4 {
+  color: #2E7D32; /* Deep green */
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* Contact Page */
+
+/* Contact info text */
+.contact-info p,
+.contact-info strong {
+  color: #2E7D32;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Form labels */
+form label {
+  color: #2E7D32;
+  font-weight: 600;
+}
+
+/* Form inputs and textarea */
+form .form-control {
+  border: 1.5px solid #81C784; /* Light green border */
+  border-radius: 8px;
+  padding: 12px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form .form-control:focus {
+  border-color: #2E7D32; /* Darker green on focus */
+  box-shadow: 0 0 8px #2E7D32AA;
+}
+
+/* Submit button */
+button.btn-primary {
+  background-color: #2E7D32;
+  border: none;
+  padding: 12px 30px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 10px #2E7D3280;
+  cursor: pointer;
+}
+
+button.btn-primary:hover {
+  background-color: #81C784;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px #81C784cc;
+}
+
+/* Google map iframe styling */
+iframe {
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Events Page */
+
+/* Event card container */
+.event-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(46, 125, 50, 0.2);
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for event cards */
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(46, 125, 50, 0.35);
+}
+
+/* Event title */
+.event-title {
+  color: #2E7D32;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+/* Event date */
+.event-date {
+  font-weight: 600;
+  color: #81C784;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* Event description text */
+.event-description {
+  color: #333;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+/* Smooth transitions for interactive elements */
+a, button, .card, .nav-link {
+  transition: all 0.3s ease;
+}
+.nav-link:hover {
+  color: #00ffd5 !important;
+  transform: scale(1.1);
+}
+.btn-primary {
+  background-color: #00695c;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #00bfa5;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 191, 165, 0.4);
+}
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.2s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
