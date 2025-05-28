@@ -4,37 +4,58 @@
 <head>
     <title>Student Dashboard</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            background-color: #e8f0fe;
-        }
+       body {
+      font-family: Arial, sans-serif;
+      background: #f1f3f6;
+      margin: 0;
+      padding: 20px;
+    }
 
-        .card {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 400px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+    .card {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
 
-        button {
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+    h2, h3 {
+      text-align: center;
+      color: #333;
+    }
 
-        button {
-            background-color: #2196F3;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
 
-        button:hover {
-            background-color: #1976D2;
-        }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+
+    th {
+      background-color: #009688;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 15px;
+      }
+
+      th, td {
+        font-size: 14px;
+        padding: 8px;
+      }
+    }
     </style>
 </head>
 
@@ -42,9 +63,22 @@
     <div class="card">
         <h2>Welcome, <span id="studentName">Loading...</span></h2>
         <p>Email: <span id="studentEmail"></span></p>
-        <p>Role: Student</p> 
-        
+        <p>Role: Student</p>
+
         <button onclick="logout()">Logout</button>
+
+    </div>
+    <div class="card">
+        <h3>Your Marks</h3>
+        <table id="marksTable" border="1" style="margin-top: 10px;">
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Marks</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
 
     </div>
 
@@ -60,6 +94,39 @@
                     });
             });
         }
+
+        import { db, auth } from './firebase.js';
+        import {
+            collection,
+            getDocs
+        } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+        import {
+            onAuthStateChanged
+        } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                const uid = user.uid;
+                const marksRef = collection(db, "students", uid, "marks");
+                const querySnapshot = await getDocs(marksRef);
+
+                const tableBody = document.querySelector("#marksTable tbody");
+                tableBody.innerHTML = ""; // clear old data
+
+                querySnapshot.forEach((doc) => {
+                    const data = doc.data();
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+        <td>${data.subject}</td>
+        <td>${data.marks}</td>
+      `;
+                    tableBody.appendChild(row);
+                });
+            } else {
+                window.location.href = "login.html"; // Not logged in
+            }
+        });
+
     </script>
 
 </body>
