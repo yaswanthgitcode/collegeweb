@@ -1,30 +1,48 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Faculty Dashboard</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background-color: #f3e8ff;
-    }
+    <title>Faculty Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f3e8ff;
+        }
 
-    .card {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 400px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-  </style>
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
-<body>
-  <div class="card">
-    <h2>Welcome, <span id="facultyName">Loading...</span></h2>
-    <p>Email: <span id="facultyEmail"></span></p>
-    <p>Role: Faculty</p>
-  </div>
 
-  <script type="module" src="faculty.js"></script>
+<body>
+    <div class="card">
+        <h2>Welcome, <span id="facultyName">Loading...</span></h2>
+        <p>Email: <span id="facultyEmail"></span></p>
+        <p>Role: Faculty</p>
+        <button onclick="logout()">Logout</button>
+
+    </div>
+
+    <script type="module" src="faculty.js"></script>
+    <script>
+        function logout() {
+            import('./firebase.js').then(({ auth }) => {
+                import('https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js')
+                    .then(({ signOut }) => {
+                        signOut(auth).then(() => {
+                            window.location.href = "login.html";
+                        });
+                    });
+            });
+        }
+    </script>
+
 </body>
+
 </html>
