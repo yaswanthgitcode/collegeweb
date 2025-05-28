@@ -43,3 +43,14 @@ async function loadUsers() {
 }
 
 loadUsers();
+
+console.log("Connecting to Firebase...");
+
+const snapshot = await getDocs(collection(db, "users"));
+console.log("Docs fetched:", snapshot.size);
+
+snapshot.forEach(doc => {
+  const user = doc.data();
+  console.log("User:", user);
+});
+
