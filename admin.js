@@ -25,24 +25,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // ✅ Load users into table
-async function loadUsers() {
-    const tbody = document.querySelector("#userTable tbody");
-    tbody.innerHTML = "";
 
-    const snapshot = await getDocs(collection(db, "users"));
-    snapshot.forEach(doc => {
-        const user = doc.data();
-        const row = document.createElement("tr");
-        row.innerHTML = `
-      <td>${user.email}</td>
-      <td>${user.role}</td>
-      <td><button class="delete-btn" onclick="alert('Delete coming soon')">Delete</button></td>
-    `;
-        tbody.appendChild(row);
-    });
-}
-
-loadUsers();
 
 console.log("Connecting to Firebase...");
 
