@@ -3,13 +3,15 @@ import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-aut
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 // Your config here (replace with your actual values)
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyABC...",
-  authDomain: "yashgiet.firebaseapp.com",
-  projectId: "yashgiet",
-  storageBucket: "yashgiet.appspot.com",
-  messagingSenderId: "123456789",
-  appId: "1:123456789:web:abcd123"
+  apiKey: "AIzaSyAts3B-PLGCIAd6F5SdLAEDJ92PgUMZVZI",
+  authDomain: "collegewebsite-75f2e.firebaseapp.com",
+  projectId: "collegewebsite-75f2e",
+  storageBucket: "collegewebsite-75f2e.firebasestorage.app",
+  messagingSenderId: "1070493768081",
+  appId: "1:1070493768081:web:627a95539805e9e7bf2230",
+  measurementId: "G-78LC2BG67K"
 };
 
 const app = initializeApp(firebaseConfig);
