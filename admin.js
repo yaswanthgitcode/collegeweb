@@ -50,7 +50,34 @@ const snapshot = await getDocs(collection(db, "users"));
 console.log("Docs fetched:", snapshot.size);
 
 snapshot.forEach(doc => {
-  const user = doc.data();
-  console.log("User:", user);
+    const user = doc.data();
+    console.log("User:", user);
 });
+
+async function loadUsers() {
+    const tbody = document.querySelector("#userTable tbody");
+    tbody.innerHTML = "";
+
+    try {
+        const snapshot = await getDocs(collection(db, "users"));
+        console.log("Docs fetched:", snapshot.size);
+
+        snapshot.forEach(doc => {
+            const user = doc.data();
+            console.log("User:", user);
+            const row = document.createElement("tr");
+            row.innerHTML = `
+        <td>${user.email}</td>
+        <td>${user.role}</td>
+        <td><button class="delete-btn" onclick="alert('Delete coming soon')">Delete</button></td>
+      `;
+            tbody.appendChild(row);
+        });
+    } catch (error) {
+        console.error("Error fetching users:", error);
+    }
+}
+
+loadUsers();
+
 
