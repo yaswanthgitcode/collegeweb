@@ -1,3 +1,14 @@
+// admin.js
+
+// ✅ Firebase CDN imports
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+import {
+    getFirestore,
+    collection,
+    getDocs
+} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+
+// ✅ Your Firebase project config
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyAts3B-PLGCIAd6F5SdLAEDJ92PgUMZVZI",
@@ -9,12 +20,26 @@ const firebaseConfig = {
     measurementId: "G-78LC2BG67K"
 };
 
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+// ✅ Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-collection(db, "users")
+// ✅ Load users into table
+async function loadUsers() {
+    const tbody = document.querySelector("#userTable tbody");
+    tbody.innerHTML = "";
 
-usersSnapshot.forEach(doc => {
-    const user = doc.data();
-    const row = document.createElement("tr");
-    tbody.appendChild(row);
-});
+    const snapshot = await getDocs(collection(db, "users"));
+    snapshot.forEach(doc => {
+        const user = doc.data();
+        const row = document.createElement("tr");
+        row.innerHTML = `
+      <td>${user.email}</td>
+      <td>${user.role}</td>
+      <td><button class="delete-btn" onclick="alert('Delete coming soon')">Delete</button></td>
+    `;
+        tbody.appendChild(row);
+    });
+}
+
+loadUsers();
