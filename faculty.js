@@ -15,6 +15,6 @@ onAuthStateChanged(auth, async (user) => {
       alert("Faculty data not found.");
     }
   } else {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
   }
 });
