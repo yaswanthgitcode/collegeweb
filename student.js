@@ -18,7 +18,7 @@ onAuthStateChanged(auth, async (user) => {
         window.location.href = "login.html";
     }
 });
-import { db, auth } from './firebase.js';
+
 import {
     collection,
     getDocs
