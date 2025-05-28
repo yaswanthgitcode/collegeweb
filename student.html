@@ -56,7 +56,7 @@
         padding: 8px;
       }
     }
-    
+
     </style>
 </head>
 
@@ -96,37 +96,7 @@
             });
         }
 
-        import { db, auth } from './firebase.js';
-        import {
-            collection,
-            getDocs
-        } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-        import {
-            onAuthStateChanged
-        } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-
-        onAuthStateChanged(auth, async (user) => {
-            if (user) {
-                const uid = user.uid;
-                const marksRef = collection(db, "students", uid, "marks");
-                const querySnapshot = await getDocs(marksRef);
-
-                const tableBody = document.querySelector("#marksTable tbody");
-                tableBody.innerHTML = ""; // clear old data
-
-                querySnapshot.forEach((doc) => {
-                    const data = doc.data();
-                    const row = document.createElement("tr");
-                    row.innerHTML = `
-        <td>${data.subject}</td>
-        <td>${data.marks}</td>
-      `;
-                    tableBody.appendChild(row);
-                });
-            } else {
-                window.location.href = "login.html"; // Not logged in
-            }
-        });
+       
 
     </script>
 
