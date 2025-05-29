@@ -70,6 +70,14 @@
 <body>
     <div class="card">
         <h2>Admin Dashboard</h2>
+        <label for="roleFilter">Filter by Role:</label>
+        <select id="roleFilter">
+            <option value="all">All</option>
+            <option value="student">Student</option>
+            <option value="faculty">Faculty</option>
+        </select>
+
+        <!-- Your existing user table -->
         <table id="userTable">
             <thead>
                 <tr>
@@ -80,6 +88,7 @@
             </thead>
             <tbody></tbody>
         </table>
+
 
     </div>
 

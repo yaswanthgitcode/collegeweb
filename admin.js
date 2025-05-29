@@ -19,7 +19,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-async function loadUsers() {
+// Load users and apply filter
+async function loadUsers(role = "all") {
   const tbody = document.querySelector("#userTable tbody");
   tbody.innerHTML = "";
 
@@ -29,31 +30,39 @@ async function loadUsers() {
       const user = docSnap.data();
       const id = docSnap.id;
 
-      const row = document.createElement("tr");
-      row.innerHTML = `
-        <td>${user.email}</td>
-        <td>${user.role}</td>
-        <td>
-          <button onclick="deleteUser('${id}')">Delete</button>
-        </td>
-      `;
-      tbody.appendChild(row);
+      // Filter by role if not "all"
+      if (role === "all" || user.role === role) {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${user.email}</td>
+          <td>${user.role}</td>
+          <td><button onclick="deleteUser('${id}')">Delete</button></td>
+        `;
+        tbody.appendChild(row);
+      }
     });
   } catch (error) {
     console.error("Error loading users:", error);
   }
 }
 
+// Delete user
 window.deleteUser = async function (userId) {
   if (confirm("Are you sure to delete this user?")) {
     try {
       await deleteDoc(doc(db, "users", userId));
       alert("User deleted!");
-      loadUsers();
+      loadUsers(document.getElementById("roleFilter").value);
     } catch (error) {
       console.error("Delete failed", error);
     }
   }
 };
 
+// Filter event listener
+document.getElementById("roleFilter").addEventListener("change", (e) => {
+  loadUsers(e.target.value);
+});
+
+// Initial load
 loadUsers();
