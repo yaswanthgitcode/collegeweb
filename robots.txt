@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yashgietpolytechniccollege.netlify.app/sitemap.xml
+Sitemap: https://yashgietpolytechniccollege.netlify.app/mysitemap.xml
